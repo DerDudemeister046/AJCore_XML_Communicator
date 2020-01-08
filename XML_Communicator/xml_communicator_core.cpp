@@ -97,7 +97,7 @@ void XML_Communicator_Core::saveToDisk(bool dialog)
             qDebug() << "XCC:->\t ERROR:" << file.errorString();
         }
 
-        QDataStream out(&file);
+        QTextStream out(&file);
         //out.setVersion(QDataStream::Qt_5_12);
         tempfile.open();
         out << tempfile.readAll();
