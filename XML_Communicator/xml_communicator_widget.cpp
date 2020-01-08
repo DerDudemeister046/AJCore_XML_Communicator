@@ -48,3 +48,8 @@ void XML_Communicator_Widget::on_silent_test_btn_clicked()
     core->loadFromDisk(false);
     core->readXML();
 }
+
+void XML_Communicator_Widget::on_evaluate_btn_clicked()
+{
+    core->processFile();
+}

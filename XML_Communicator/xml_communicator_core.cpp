@@ -145,6 +145,11 @@ void XML_Communicator_Core::loadFromDisk(bool dialog)
     }
 }
 
+void XML_Communicator_Core::processFile()
+{
+    docmgr.processDocument(&tempfile);
+}
+
 // SLOTS & SIGNALS
 
 void XML_Communicator_Core::fileIsReady(QNetworkReply *reply)

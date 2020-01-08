@@ -18,11 +18,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     xml_communicator_core.cpp \
-    xml_communicator_widget.cpp
+    xml_communicator_widget.cpp \
+    xml_document_manager.cpp
 
 HEADERS += \
     xml_communicator_core.h \
-    xml_communicator_widget.h
+    xml_communicator_widget.h \
+    xml_document_manager.h
 
 FORMS += \
     xml_communicator_widget.ui
