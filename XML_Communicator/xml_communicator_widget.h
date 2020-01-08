@@ -26,6 +26,10 @@ private slots:
 
     void on_flushFile_btn_clicked();
 
+    void on_saveFile_btn_clicked();
+
+    void on_loadFile_btn_clicked();
+
 private:
     Ui::XML_Communicator_Widget *ui;
     XML_Communicator_Core *core;

@@ -3,9 +3,10 @@
 
 //---!---
 #include <QObject>
-#include <QTemporaryFile>   // Handle Tempfiles
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
+#include <QTemporaryFile>           // Handle Tempfiles
+#include <QNetworkAccessManager>    // handle network requests
+#include <QNetworkReply>            // handle reply from network request
+#include <QFileDialog>              // dialog for load and save files
 //---#---
 #include <QDebug>   // DEBUGGING ONLY
 
@@ -27,6 +28,9 @@ public:
     void downloadXML(QString xmlurl);   // downloads xml file into tempfile from given destination
     void readXML();                     // reads content of tempfile
     void flushFile();                   // empties the tempfile
+    // File save and load
+    void saveToDisk();          // saves tempfile to disk
+    void loadFromDisk();        // loads file from disk to tempfile
 private:
     QTemporaryFile tempfile;
     QString source;             // source of the xml file

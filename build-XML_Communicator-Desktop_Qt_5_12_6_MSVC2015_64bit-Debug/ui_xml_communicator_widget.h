@@ -11,8 +11,10 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,30 +24,60 @@ class Ui_XML_Communicator_Widget
 public:
     QGridLayout *gridLayout;
     QPushButton *readXML_btn;
-    QPushButton *startDownload_btn;
+    QSpacerItem *horizontalSpacer;
     QPushButton *flushFile_btn;
+    QSpacerItem *horizontalSpacer_2;
+    QPushButton *saveFile_btn;
+    QFrame *line;
+    QPushButton *startDownload_btn;
+    QPushButton *loadFile_btn;
 
     void setupUi(QWidget *XML_Communicator_Widget)
     {
         if (XML_Communicator_Widget->objectName().isEmpty())
             XML_Communicator_Widget->setObjectName(QString::fromUtf8("XML_Communicator_Widget"));
-        XML_Communicator_Widget->resize(273, 127);
+        XML_Communicator_Widget->resize(273, 166);
         gridLayout = new QGridLayout(XML_Communicator_Widget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         readXML_btn = new QPushButton(XML_Communicator_Widget);
         readXML_btn->setObjectName(QString::fromUtf8("readXML_btn"));
 
-        gridLayout->addWidget(readXML_btn, 1, 0, 1, 1);
+        gridLayout->addWidget(readXML_btn, 1, 1, 1, 1);
 
-        startDownload_btn = new QPushButton(XML_Communicator_Widget);
-        startDownload_btn->setObjectName(QString::fromUtf8("startDownload_btn"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addWidget(startDownload_btn, 0, 0, 1, 1);
+        gridLayout->addItem(horizontalSpacer, 1, 0, 1, 1);
 
         flushFile_btn = new QPushButton(XML_Communicator_Widget);
         flushFile_btn->setObjectName(QString::fromUtf8("flushFile_btn"));
 
-        gridLayout->addWidget(flushFile_btn, 2, 0, 1, 1);
+        gridLayout->addWidget(flushFile_btn, 2, 1, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_2, 1, 2, 1, 1);
+
+        saveFile_btn = new QPushButton(XML_Communicator_Widget);
+        saveFile_btn->setObjectName(QString::fromUtf8("saveFile_btn"));
+
+        gridLayout->addWidget(saveFile_btn, 4, 1, 1, 1);
+
+        line = new QFrame(XML_Communicator_Widget);
+        line->setObjectName(QString::fromUtf8("line"));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        gridLayout->addWidget(line, 3, 0, 1, 3);
+
+        startDownload_btn = new QPushButton(XML_Communicator_Widget);
+        startDownload_btn->setObjectName(QString::fromUtf8("startDownload_btn"));
+
+        gridLayout->addWidget(startDownload_btn, 0, 1, 1, 1);
+
+        loadFile_btn = new QPushButton(XML_Communicator_Widget);
+        loadFile_btn->setObjectName(QString::fromUtf8("loadFile_btn"));
+
+        gridLayout->addWidget(loadFile_btn, 5, 1, 1, 1);
 
 
         retranslateUi(XML_Communicator_Widget);
@@ -57,8 +89,10 @@ public:
     {
         XML_Communicator_Widget->setWindowTitle(QApplication::translate("XML_Communicator_Widget", "XML_Communicator_Widget", nullptr));
         readXML_btn->setText(QApplication::translate("XML_Communicator_Widget", "Datei auslesen", nullptr));
-        startDownload_btn->setText(QApplication::translate("XML_Communicator_Widget", "Starte Download", nullptr));
         flushFile_btn->setText(QApplication::translate("XML_Communicator_Widget", "Datei leeren", nullptr));
+        saveFile_btn->setText(QApplication::translate("XML_Communicator_Widget", "Datei Speichern", nullptr));
+        startDownload_btn->setText(QApplication::translate("XML_Communicator_Widget", "Starte Download", nullptr));
+        loadFile_btn->setText(QApplication::translate("XML_Communicator_Widget", "Datei Laden", nullptr));
     } // retranslateUi
 
 };
