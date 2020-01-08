@@ -17,9 +17,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
+    xml_communicator.cpp \
     xml_communicator_widget.cpp
 
 HEADERS += \
+    xml_communicator.h \
     xml_communicator_widget.h
 
 FORMS += \

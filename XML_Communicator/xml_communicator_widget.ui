@@ -6,13 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>273</width>
+    <height>117</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>XML_Communicator_Widget</string>
   </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QPushButton" name="startDownload_btn">
+     <property name="text">
+      <string>Starte Download</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
