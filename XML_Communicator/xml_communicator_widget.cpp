@@ -8,7 +8,7 @@ XML_Communicator_Widget::XML_Communicator_Widget(QWidget *parent)
 {
     ui->setupUi(this);
     core = new XML_Communicator_Core(this);
-    core->downloadXML("HALLO WELT!");
+
 }
 
 XML_Communicator_Widget::~XML_Communicator_Widget()
@@ -16,3 +16,8 @@ XML_Communicator_Widget::~XML_Communicator_Widget()
     delete ui;
 }
 
+
+void XML_Communicator_Widget::on_startDownload_btn_clicked()
+{
+    core->downloadXML(core->getSource());
+}

@@ -2,6 +2,9 @@
 #define XML_COMMUNICATOR_WIDGET_H
 
 #include <QWidget>
+
+
+
 #include "xml_communicator_core.h"
 
 QT_BEGIN_NAMESPACE
@@ -16,8 +19,12 @@ public:
     XML_Communicator_Widget(QWidget *parent = nullptr);
     ~XML_Communicator_Widget();
 
+private slots:
+    void on_startDownload_btn_clicked();
+
 private:
     Ui::XML_Communicator_Widget *ui;
     XML_Communicator_Core *core;
+
 };
 #endif // XML_COMMUNICATOR_WIDGET_H
