@@ -17,6 +17,10 @@ public:
 private:
     QDomDocument document;
     QDomElement root;
+    QStringList attributes;
+    QStringList tags;
+    // Internal functions
+    void populateLists();
 signals:
 
 public slots:
