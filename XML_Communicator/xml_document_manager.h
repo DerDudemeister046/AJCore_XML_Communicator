@@ -21,6 +21,7 @@ private:
     QStringList tags;
     // Internal functions
     void populateLists();
+    bool subchildCheck();
 signals:
 
 public slots:
