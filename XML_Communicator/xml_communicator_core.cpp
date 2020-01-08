@@ -70,19 +70,30 @@ void XML_Communicator_Core::flushFile()
     tempfile.close();
 }
 
-void XML_Communicator_Core::saveToDisk()
+void XML_Communicator_Core::saveToDisk(bool dialog)
 {
-    QString filename = QFileDialog::getSaveFileName(nullptr, tr("Datei Speichern"),"",tr("XML-Datei (*.xml);;Alle Dateien(*)"));
-    if (filename.isEmpty())
+    if (dialog)
+    {
+        QString filename = QFileDialog::getSaveFileName(nullptr, tr("Datei Speichern"),"",tr("XML-Datei (*.xml);;Alle Dateien(*)"));
+        if (filename.isEmpty())
+        {
+            qDebug() << "XCC:->\t Filename is empty! Aborting saving to disk!";
+        }
+        else
+        {
+            setFileName(filename);
+        }
+    }
+    if (getFileName() == "" || getFileName().isEmpty())
     {
         qDebug() << "XCC:->\t Filename is empty! Aborting saving to disk!";
     }
     else
     {
-        QFile file(filename);
+        QFile file(getFileName());
         if (!file.open(QIODevice::WriteOnly| QIODevice::Text))
         {
-            qDebug() << "XCC:->\t ERROR:\t" << file.errorString();
+            qDebug() << "XCC:->\t ERROR:" << file.errorString();
         }
 
         QDataStream out(&file);
@@ -90,21 +101,32 @@ void XML_Communicator_Core::saveToDisk()
         tempfile.open();
         out << tempfile.readAll();
         tempfile.close();
-        qDebug() << "XCC:->\t file written to disk";
+        qDebug() << "XCC:->\t file written(silent) to disk";
         file.close();
     }
 }
 
-void XML_Communicator_Core::loadFromDisk()
+void XML_Communicator_Core::loadFromDisk(bool dialog)
 {
-    QString filename = QFileDialog::getOpenFileName(nullptr, tr("Datei Öffnen"),"",tr("XML-Datei (*.xml);;Alle Dateien(*)"));
-    if (filename.isEmpty())
+    if (dialog)
+    {
+        QString filename = QFileDialog::getOpenFileName(nullptr, tr("Datei Öffnen"),"",tr("XML-Datei (*.xml);;Alle Dateien(*)"));
+        if (filename.isEmpty())
+        {
+            qDebug() << "XCC:->\t Filename is empty! File can't be loaded";
+        }
+        else
+        {
+            setFileName(filename);
+        }
+    }
+    if (getFileName() == "" || getFileName().isEmpty())
     {
         qDebug() << "XCC:->\t Filename is empty! File can't be loaded";
     }
     else
     {
-        QFile file(filename);
+        QFile file(getFileName());
         if (!file.open(QIODevice::ReadOnly| QIODevice::Text))
         {
             qDebug() << "XCC:->\t ERROR:" << file.errorString();
@@ -119,6 +141,13 @@ void XML_Communicator_Core::loadFromDisk()
         QByteArray ba = in.readAll().toLocal8Bit(); // convert textstream to bytearray to be written to tempfile
         tempfile.write(ba);
         tempfile.close();
+    }
+
+
+
+    else
+    {
+
     }
 }
 
