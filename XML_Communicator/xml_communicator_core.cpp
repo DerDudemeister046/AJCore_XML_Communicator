@@ -3,7 +3,6 @@
 XML_Communicator_Core::XML_Communicator_Core(QObject *parent) : QObject(parent)
 {
     qDebug() << "XML_Communicator_Core: initialize...";
-
     setDownloadpath("./");
     setSource("http://127.0.0.1/xml_testfile.xml");
     qDebug() << "XML_Communicator_Core: initialization done";
@@ -57,6 +56,11 @@ void XML_Communicator_Core::flushFile()
     tempfile.flush();
     tempfile.close();
 }
+
+
+
+
+// SLOTS & SIGNALS
 
 void XML_Communicator_Core::fileIsReady(QNetworkReply *reply)
 {

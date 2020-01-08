@@ -31,3 +31,13 @@ void XML_Communicator_Widget::on_flushFile_btn_clicked()
 {
     core->flushFile();
 }
+
+void XML_Communicator_Widget::on_saveFile_btn_clicked()
+{
+
+}
+
+void XML_Communicator_Widget::on_loadFile_btn_clicked()
+{
+
+}
