@@ -1,8 +1,8 @@
-QT       += core gui
+QT       += core gui xml network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
+CONFIG += c++11 console
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -17,11 +17,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    xml_communicator.cpp \
+    xml_communicator_core.cpp \
     xml_communicator_widget.cpp
 
 HEADERS += \
-    xml_communicator.h \
+    xml_communicator_core.h \
     xml_communicator_widget.h
 
 FORMS += \

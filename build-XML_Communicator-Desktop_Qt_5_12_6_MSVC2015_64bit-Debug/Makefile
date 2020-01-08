@@ -222,6 +222,7 @@ Makefile: ..\XML_Communicator\XML_Communicator.pro D:\Qt\5.12.6\msvc2015_64\mksp
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\qt_config.prf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\win32-msvc\qmake.conf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\spec_post.prf \
+		.qmake.stash \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\exclusive_builds.prf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\common\msvc-version.conf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\toolchain.prf \
@@ -230,6 +231,7 @@ Makefile: ..\XML_Communicator\XML_Communicator.pro D:\Qt\5.12.6\msvc2015_64\mksp
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\resolve_config.prf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\exclusive_builds_post.prf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\default_post.prf \
+		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\win32\console.prf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\qml_debug.prf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\precompile_header.prf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\warn_on.prf \
@@ -240,7 +242,6 @@ Makefile: ..\XML_Communicator\XML_Communicator.pro D:\Qt\5.12.6\msvc2015_64\mksp
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\uic.prf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\qmake_use.prf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\file_copies.prf \
-		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\win32\windows.prf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\testcase_targets.prf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\exceptions.prf \
 		D:\Qt\5.12.6\msvc2015_64\mkspecs\features\yacc.prf \
@@ -248,8 +249,9 @@ Makefile: ..\XML_Communicator\XML_Communicator.pro D:\Qt\5.12.6\msvc2015_64\mksp
 		..\XML_Communicator\XML_Communicator.pro \
 		D:\Qt\5.12.6\msvc2015_64\lib\Qt5Widgets.prl \
 		D:\Qt\5.12.6\msvc2015_64\lib\Qt5Gui.prl \
-		D:\Qt\5.12.6\msvc2015_64\lib\Qt5Core.prl \
-		D:\Qt\5.12.6\msvc2015_64\lib\qtmain.prl
+		D:\Qt\5.12.6\msvc2015_64\lib\Qt5Xml.prl \
+		D:\Qt\5.12.6\msvc2015_64\lib\Qt5Network.prl \
+		D:\Qt\5.12.6\msvc2015_64\lib\Qt5Core.prl
 	$(QMAKE) -o Makefile ..\XML_Communicator\XML_Communicator.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\spec_pre.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\common\angle.conf:
@@ -396,6 +398,7 @@ D:\Qt\5.12.6\msvc2015_64\mkspecs\features\qt_functions.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\qt_config.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\win32-msvc\qmake.conf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\spec_post.prf:
+.qmake.stash:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\exclusive_builds.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\common\msvc-version.conf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\toolchain.prf:
@@ -404,6 +407,7 @@ D:\Qt\5.12.6\msvc2015_64\mkspecs\features\win32\default_pre.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\resolve_config.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\exclusive_builds_post.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\default_post.prf:
+D:\Qt\5.12.6\msvc2015_64\mkspecs\features\win32\console.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\qml_debug.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\precompile_header.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\warn_on.prf:
@@ -414,7 +418,6 @@ D:\Qt\5.12.6\msvc2015_64\mkspecs\features\win32\opengl.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\uic.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\qmake_use.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\file_copies.prf:
-D:\Qt\5.12.6\msvc2015_64\mkspecs\features\win32\windows.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\testcase_targets.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\exceptions.prf:
 D:\Qt\5.12.6\msvc2015_64\mkspecs\features\yacc.prf:
@@ -422,8 +425,9 @@ D:\Qt\5.12.6\msvc2015_64\mkspecs\features\lex.prf:
 ..\XML_Communicator\XML_Communicator.pro:
 D:\Qt\5.12.6\msvc2015_64\lib\Qt5Widgets.prl:
 D:\Qt\5.12.6\msvc2015_64\lib\Qt5Gui.prl:
+D:\Qt\5.12.6\msvc2015_64\lib\Qt5Xml.prl:
+D:\Qt\5.12.6\msvc2015_64\lib\Qt5Network.prl:
 D:\Qt\5.12.6\msvc2015_64\lib\Qt5Core.prl:
-D:\Qt\5.12.6\msvc2015_64\lib\qtmain.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\XML_Communicator\XML_Communicator.pro -spec win32-msvc "CONFIG+=debug" "CONFIG+=qml_debug"
 
