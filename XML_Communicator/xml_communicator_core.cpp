@@ -3,6 +3,7 @@
 XML_Communicator_Core::XML_Communicator_Core(QObject *parent) : QObject(parent)
 {
     qDebug() << "XCC:->\t initialize...";
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
     setDownloadpath("./");
     setFileName("default.txt");
     setSource("http://127.0.0.1/xml_testfile.xml");
@@ -91,17 +92,17 @@ void XML_Communicator_Core::saveToDisk(bool dialog)
     else
     {
         QFile file(getFileName());
-        if (!file.open(QIODevice::WriteOnly| QIODevice::Text))
+        if (!file.open(QIODevice::WriteOnly))
         {
             qDebug() << "XCC:->\t ERROR:" << file.errorString();
         }
 
         QDataStream out(&file);
-        out.setVersion(QDataStream::Qt_5_12);
+        //out.setVersion(QDataStream::Qt_5_12);
         tempfile.open();
         out << tempfile.readAll();
         tempfile.close();
-        qDebug() << "XCC:->\t file written(silent) to disk";
+        qDebug() << "XCC:->\t file written to disk";
         file.close();
     }
 }
@@ -127,64 +128,7 @@ void XML_Communicator_Core::loadFromDisk(bool dialog)
     else
     {
         QFile file(getFileName());
-        if (!file.open(QIODevice::ReadOnly| QIODevice::Text))
-        {
-            qDebug() << "XCC:->\t ERROR:" << file.errorString();
-        }
-        //QDataStream in(&file);
-        QTextStream in(&file);
-        //in.setVersion(QDataStream::Qt_5_12);
-        tempfile.open();
-        tempfile.flush();
-        qDebug() << "XCC:->\t file loaded from disk";
-        //qDebug() << "XCC: ->" << in.readAll();
-        QByteArray ba = in.readAll().toLocal8Bit(); // convert textstream to bytearray to be written to tempfile
-        tempfile.write(ba);
-        tempfile.close();
-    }
-
-
-
-    else
-    {
-
-    }
-}
-
-void XML_Communicator_Core::saveToDiskSilent()
-{
-    if (getFileName() == "" || getFileName().isEmpty())
-    {
-        qDebug() << "XCC:->\t Filename is empty! Aborting saving to disk!";
-    }
-    else
-    {
-        QFile file(getFileName());
-        if (!file.open(QIODevice::WriteOnly| QIODevice::Text))
-        {
-            qDebug() << "XCC:->\t ERROR:" << file.errorString();
-        }
-
-        QDataStream out(&file);
-        out.setVersion(QDataStream::Qt_5_12);
-        tempfile.open();
-        out << tempfile.readAll();
-        tempfile.close();
-        qDebug() << "XCC:->\t file written(silent) to disk";
-        file.close();
-    }
-}
-
-void XML_Communicator_Core::loadDiskSilent()
-{
-    if (getFileName() == "" || getFileName().isEmpty())
-    {
-        qDebug() << "XCC:->\t Filename is empty! File can't be loaded";
-    }
-    else
-    {
-        QFile file(getFileName());
-        if (!file.open(QIODevice::ReadOnly| QIODevice::Text))
+        if (!file.open(QIODevice::ReadOnly))
         {
             qDebug() << "XCC:->\t ERROR:" << file.errorString();
         }
@@ -200,9 +144,6 @@ void XML_Communicator_Core::loadDiskSilent()
         tempfile.close();
     }
 }
-
-
-
 
 // SLOTS & SIGNALS
 

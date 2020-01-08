@@ -7,6 +7,7 @@
 #include <QNetworkAccessManager>    // handle network requests
 #include <QNetworkReply>            // handle reply from network request
 #include <QFileDialog>              // dialog for load and save files
+#include <QTextCodec>               // For UTF-8 formating
 //---#---
 #include <QDebug>   // DEBUGGING ONLY
 
@@ -32,10 +33,8 @@ public:
     void readXML();                                 // reads content of tempfile
     void flushFile();                               // empties the tempfile
     // File save and load
-    void saveToDisk();                              // saves tempfile to disk
-    void loadFromDisk();                            // loads file from disk to tempfile
-    void saveToDiskSilent();                        // saves with given filename, no dialog prompted
-    void loadDiskSilent();                          // loads with given filename, no dialog prompted
+    void saveToDisk(bool dialog);                              // saves tempfile to disk
+    void loadFromDisk(bool dialog);                            // loads file from disk to tempfile
 private:
     QTemporaryFile tempfile;
     QString source;                                 // source of the xml file

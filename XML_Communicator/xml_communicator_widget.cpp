@@ -8,7 +8,6 @@ XML_Communicator_Widget::XML_Communicator_Widget(QWidget *parent)
 {
     ui->setupUi(this);
     core = new XML_Communicator_Core(this);
-
 }
 
 XML_Communicator_Widget::~XML_Communicator_Widget()
@@ -34,15 +33,18 @@ void XML_Communicator_Widget::on_flushFile_btn_clicked()
 
 void XML_Communicator_Widget::on_saveFile_btn_clicked()
 {
-    core->saveToDisk();
+    core->saveToDisk(true);
 }
 
 void XML_Communicator_Widget::on_loadFile_btn_clicked()
 {
-    core->loadFromDisk();
+    core->loadFromDisk(true);
 }
 
 void XML_Communicator_Widget::on_silent_test_btn_clicked()
 {
-    core->saveToDiskSilent();
+    core->setFileName("dummy.txt");
+    core->saveToDisk(false);
+    core->loadFromDisk(false);
+    core->readXML();
 }
