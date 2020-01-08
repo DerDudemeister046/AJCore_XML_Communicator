@@ -42,16 +42,28 @@ void XML_Communicator_Core::downloadXML(QString xmlurl)
     manager->get(QNetworkRequest(QUrl(getSource())));
 }
 
+void XML_Communicator_Core::readXML()
+{
+    tempfile.open();
+    qDebug() << "XML_Communicator_Core: Reading content of tempfile...";
+    qDebug() << tempfile.readAll();
+    tempfile.close();
+}
+
+void XML_Communicator_Core::flushFile()
+{
+    qDebug() << "XML_Communicator_Core: tempfile is being flushed!";
+    tempfile.open();
+    tempfile.flush();
+    tempfile.close();
+}
+
 void XML_Communicator_Core::fileIsReady(QNetworkReply *reply)
 {
     qDebug() << "XML_Communicator_Core: File is ready...";
+    // Flushing file to have a clean start everytime the file is downloaded
+    flushFile();
     tempfile.open();
     tempfile.write(reply->readAll());
     tempfile.close();
-    tempfile.open();
-    qDebug() << "XML_Communicator_Core: content is written to tempfile";
-    qDebug() << "FILEOUTPUT: " << tempfile.readAll();
-    tempfile.flush();
-    tempfile.close();
-    qDebug() << "XML_Communicator_Core: tempfile cleared";
 }

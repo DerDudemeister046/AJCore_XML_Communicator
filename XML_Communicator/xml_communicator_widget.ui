@@ -7,17 +7,31 @@
     <x>0</x>
     <y>0</y>
     <width>273</width>
-    <height>117</height>
+    <height>127</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>XML_Communicator_Widget</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QPushButton" name="readXML_btn">
+     <property name="text">
+      <string>Datei auslesen</string>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="0">
     <widget class="QPushButton" name="startDownload_btn">
      <property name="text">
       <string>Starte Download</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="flushFile_btn">
+     <property name="text">
+      <string>Datei leeren</string>
      </property>
     </widget>
    </item>

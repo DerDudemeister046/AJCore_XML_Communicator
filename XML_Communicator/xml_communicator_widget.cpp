@@ -21,3 +21,13 @@ void XML_Communicator_Widget::on_startDownload_btn_clicked()
 {
     core->downloadXML(core->getSource());
 }
+
+void XML_Communicator_Widget::on_readXML_btn_clicked()
+{
+    core->readXML();
+}
+
+void XML_Communicator_Widget::on_flushFile_btn_clicked()
+{
+    core->flushFile();
+}

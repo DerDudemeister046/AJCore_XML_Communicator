@@ -24,7 +24,9 @@ public:
     void setSource(QString source); // sets source of xml file
 
     // Class functions
-    void downloadXML(QString xmlurl);
+    void downloadXML(QString xmlurl);   // downloads xml file into tempfile from given destination
+    void readXML();                     // reads content of tempfile
+    void flushFile();                   // empties the tempfile
 private:
     QTemporaryFile tempfile;
     QString source;             // source of the xml file

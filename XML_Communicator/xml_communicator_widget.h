@@ -22,6 +22,10 @@ public:
 private slots:
     void on_startDownload_btn_clicked();
 
+    void on_readXML_btn_clicked();
+
+    void on_flushFile_btn_clicked();
+
 private:
     Ui::XML_Communicator_Widget *ui;
     XML_Communicator_Core *core;

@@ -21,19 +21,31 @@ class Ui_XML_Communicator_Widget
 {
 public:
     QGridLayout *gridLayout;
+    QPushButton *readXML_btn;
     QPushButton *startDownload_btn;
+    QPushButton *flushFile_btn;
 
     void setupUi(QWidget *XML_Communicator_Widget)
     {
         if (XML_Communicator_Widget->objectName().isEmpty())
             XML_Communicator_Widget->setObjectName(QString::fromUtf8("XML_Communicator_Widget"));
-        XML_Communicator_Widget->resize(273, 117);
+        XML_Communicator_Widget->resize(273, 127);
         gridLayout = new QGridLayout(XML_Communicator_Widget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        readXML_btn = new QPushButton(XML_Communicator_Widget);
+        readXML_btn->setObjectName(QString::fromUtf8("readXML_btn"));
+
+        gridLayout->addWidget(readXML_btn, 1, 0, 1, 1);
+
         startDownload_btn = new QPushButton(XML_Communicator_Widget);
         startDownload_btn->setObjectName(QString::fromUtf8("startDownload_btn"));
 
         gridLayout->addWidget(startDownload_btn, 0, 0, 1, 1);
+
+        flushFile_btn = new QPushButton(XML_Communicator_Widget);
+        flushFile_btn->setObjectName(QString::fromUtf8("flushFile_btn"));
+
+        gridLayout->addWidget(flushFile_btn, 2, 0, 1, 1);
 
 
         retranslateUi(XML_Communicator_Widget);
@@ -44,7 +56,9 @@ public:
     void retranslateUi(QWidget *XML_Communicator_Widget)
     {
         XML_Communicator_Widget->setWindowTitle(QApplication::translate("XML_Communicator_Widget", "XML_Communicator_Widget", nullptr));
+        readXML_btn->setText(QApplication::translate("XML_Communicator_Widget", "Datei auslesen", nullptr));
         startDownload_btn->setText(QApplication::translate("XML_Communicator_Widget", "Starte Download", nullptr));
+        flushFile_btn->setText(QApplication::translate("XML_Communicator_Widget", "Datei leeren", nullptr));
     } // retranslateUi
 
 };
