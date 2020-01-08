@@ -39,5 +39,10 @@ void XML_Communicator_Widget::on_saveFile_btn_clicked()
 
 void XML_Communicator_Widget::on_loadFile_btn_clicked()
 {
+    core->loadFromDisk();
+}
 
+void XML_Communicator_Widget::on_silent_test_btn_clicked()
+{
+    core->saveToDiskSilent();
 }

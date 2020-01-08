@@ -24,13 +24,14 @@ class Ui_XML_Communicator_Widget
 public:
     QGridLayout *gridLayout;
     QPushButton *readXML_btn;
+    QPushButton *loadFile_btn;
     QSpacerItem *horizontalSpacer;
     QPushButton *flushFile_btn;
     QSpacerItem *horizontalSpacer_2;
     QPushButton *saveFile_btn;
     QFrame *line;
     QPushButton *startDownload_btn;
-    QPushButton *loadFile_btn;
+    QPushButton *silent_test_btn;
 
     void setupUi(QWidget *XML_Communicator_Widget)
     {
@@ -43,6 +44,11 @@ public:
         readXML_btn->setObjectName(QString::fromUtf8("readXML_btn"));
 
         gridLayout->addWidget(readXML_btn, 1, 1, 1, 1);
+
+        loadFile_btn = new QPushButton(XML_Communicator_Widget);
+        loadFile_btn->setObjectName(QString::fromUtf8("loadFile_btn"));
+
+        gridLayout->addWidget(loadFile_btn, 5, 1, 1, 1);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -74,10 +80,10 @@ public:
 
         gridLayout->addWidget(startDownload_btn, 0, 1, 1, 1);
 
-        loadFile_btn = new QPushButton(XML_Communicator_Widget);
-        loadFile_btn->setObjectName(QString::fromUtf8("loadFile_btn"));
+        silent_test_btn = new QPushButton(XML_Communicator_Widget);
+        silent_test_btn->setObjectName(QString::fromUtf8("silent_test_btn"));
 
-        gridLayout->addWidget(loadFile_btn, 5, 1, 1, 1);
+        gridLayout->addWidget(silent_test_btn, 6, 1, 1, 1);
 
 
         retranslateUi(XML_Communicator_Widget);
@@ -89,10 +95,11 @@ public:
     {
         XML_Communicator_Widget->setWindowTitle(QApplication::translate("XML_Communicator_Widget", "XML_Communicator_Widget", nullptr));
         readXML_btn->setText(QApplication::translate("XML_Communicator_Widget", "Datei auslesen", nullptr));
+        loadFile_btn->setText(QApplication::translate("XML_Communicator_Widget", "Datei Laden", nullptr));
         flushFile_btn->setText(QApplication::translate("XML_Communicator_Widget", "Datei leeren", nullptr));
         saveFile_btn->setText(QApplication::translate("XML_Communicator_Widget", "Datei Speichern", nullptr));
         startDownload_btn->setText(QApplication::translate("XML_Communicator_Widget", "Starte Download", nullptr));
-        loadFile_btn->setText(QApplication::translate("XML_Communicator_Widget", "Datei Laden", nullptr));
+        silent_test_btn->setText(QApplication::translate("XML_Communicator_Widget", "Ohne GUI", nullptr));
     } // retranslateUi
 
 };
