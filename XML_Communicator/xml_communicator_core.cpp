@@ -146,11 +146,12 @@ void XML_Communicator_Core::loadFromDisk(bool dialog)
     }
 }
 
-void XML_Communicator_Core::processFile(QString attribute, QString tag)
+void XML_Communicator_Core::processFile(QString tag, QString attribute)
 {
     //docmgr.processDocument(&tempfile);
     tempfile.open();
     initializeDocument(&tempfile,"hallo");
+    getFromDocument(tag,attribute);
     tempfile.close();
 }
 

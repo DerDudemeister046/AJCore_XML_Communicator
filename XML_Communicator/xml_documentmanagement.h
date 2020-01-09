@@ -21,14 +21,13 @@ public:
     // SET- & GET-Methods
     // Class Functions
     bool initializeDocument(QTemporaryFile *temp, QString documentName);    // initializes XML-File and root node -> needs to be called to make class work
-    void processXMLDocument(QTemporaryFile *temp);  // starts the process of interpreting XML-File
-    QString getFromDocument(); // returns value from XML-File as QString
+    void processXMLDocument();  // starts the process of interpreting XML-File
+    QString getFromDocument(QString tag, QString attribute); // returns value from XML-File as QString
     // Helper Functions
     void startTest(); // testing function to be removed in final version
     bool subchildTest(QDomNode *node); // checks if a given node has subchildren
 private:
     QDomDocument *document;
-    QDomNode root;
 };
 
 #endif // XML_DOCUMENTMANAGEMENT_H

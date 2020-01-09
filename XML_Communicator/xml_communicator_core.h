@@ -37,7 +37,7 @@ public:
     void saveToDisk(bool dialog);                   // saves tempfile to disk
     void loadFromDisk(bool dialog);                 // loads file from disk to tempfile
     //
-    void processFile(QString attribute, QString tag);
+    void processFile(QString tag, QString attribute);
 private:
     XML_Document_Manager docmgr;
     QTemporaryFile tempfile;                        // temporary file content storage when downloaded from server / uploaded by user
