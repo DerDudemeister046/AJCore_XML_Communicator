@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QTemporaryFile>       // To handle file passed by XML_Communicator_Core
 #include <QDomDocument>         // XML File to be processed
+#include <QXmlStreamReader>
 #include <QDebug>
 
 class XML_Document_Manager : public QObject
@@ -22,6 +23,7 @@ private:
     // Internal functions
     void populateLists();
     bool subchildCheck();
+    void traverse(const QDomNode &node);
 signals:
 
 public slots:

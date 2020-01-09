@@ -8,15 +8,7 @@ XML_Document_Manager::XML_Document_Manager(QObject *parent) : QObject(parent)
 void XML_Document_Manager::processDocument(QTemporaryFile *temp)
 {
     qDebug() << "XDM:->\tStart processing document";
-    document.setContent(temp);
-    root = document.documentElement();
-    QDomNode n = root.firstChild();
-    while (!n.isNull())
-    {
-        QDomElement e = n.toElement();
-        qDebug() << "XDM:->\tTAG:\t" << e.tagName();
-        n = n.nextSibling();
-    }
+
     qDebug() << "XDM:->\tProcessing finished";
 }
 
@@ -32,7 +24,7 @@ QString XML_Document_Manager::getFromDocument(QString attribute, QString tag)
         if(node.isElement())
         {
             QDomElement item = node.toElement();
-            qDebug() << item.attribute(attribute);
+            //qDebug() << item.attribute(attribute);
             result = item.attribute(attribute);
         }
     }
@@ -44,3 +36,26 @@ void XML_Document_Manager::populateLists()
 
 }
 
+void XML_Document_Manager::traverse(const QDomNode &node)
+{
+    QDomNode domNode = node.firstChild();
+    while(!domNode.isNull())
+    {
+        if(domNode.isElement())
+        {
+            QDomElement domElement = domNode.toElement();
+            if (!domElement.isNull())
+            {
+                if (domElement.hasChildNodes())
+                {
+                    qDebug() << domElement.nodeValue();
+                }
+
+
+                qDebug() << "DOM ELEMENT:\t\t" << domElement.tagName() << domElement.text();
+            }
+        }
+        traverse(domNode);
+        domNode=domNode.nextSibling();
+    }
+}

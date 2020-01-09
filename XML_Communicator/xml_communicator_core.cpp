@@ -68,6 +68,7 @@ void XML_Communicator_Core::flushFile()
     qDebug() << "XCC:->\t tempfile is being flushed!";
     tempfile.open();
     tempfile.flush();
+    tempfile.remove();
     tempfile.close();
 }
 
@@ -145,10 +146,14 @@ void XML_Communicator_Core::loadFromDisk(bool dialog)
     }
 }
 
-void XML_Communicator_Core::processFile()
+void XML_Communicator_Core::processFile(QString attribute, QString tag)
 {
-    docmgr.processDocument(&tempfile);
+    //docmgr.processDocument(&tempfile);
+    tempfile.open();
+    initializeDocument(&tempfile,"hallo");
+    tempfile.close();
 }
+
 
 // SLOTS & SIGNALS
 

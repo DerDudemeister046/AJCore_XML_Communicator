@@ -51,5 +51,5 @@ void XML_Communicator_Widget::on_silent_test_btn_clicked()
 
 void XML_Communicator_Widget::on_evaluate_btn_clicked()
 {
-    core->processFile();
+    core->processFile("hallo", "hallo");
 }

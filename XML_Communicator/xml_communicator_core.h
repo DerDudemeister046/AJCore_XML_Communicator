@@ -11,10 +11,12 @@
 #include <QTextCodec>               // For UTF-8 formating
 //---$---
 #include "xml_document_manager.h"   // manage documents in xml format
+
+#include "xml_documentmanagement.h"
 //---#---
 #include <QDebug>   // DEBUGGING ONLY
 
-class XML_Communicator_Core : public QObject
+class XML_Communicator_Core : public QObject, public XML_DocumentManagement
 {
     Q_OBJECT
 public:
@@ -35,7 +37,7 @@ public:
     void saveToDisk(bool dialog);                   // saves tempfile to disk
     void loadFromDisk(bool dialog);                 // loads file from disk to tempfile
     //
-    void processFile();
+    void processFile(QString attribute, QString tag);
 private:
     XML_Document_Manager docmgr;
     QTemporaryFile tempfile;                        // temporary file content storage when downloaded from server / uploaded by user

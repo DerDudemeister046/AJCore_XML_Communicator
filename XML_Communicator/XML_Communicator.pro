@@ -19,12 +19,14 @@ SOURCES += \
     main.cpp \
     xml_communicator_core.cpp \
     xml_communicator_widget.cpp \
-    xml_document_manager.cpp
+    xml_document_manager.cpp \
+    xml_documentmanagement.cpp
 
 HEADERS += \
     xml_communicator_core.h \
     xml_communicator_widget.h \
-    xml_document_manager.h
+    xml_document_manager.h \
+    xml_documentmanagement.h
 
 FORMS += \
     xml_communicator_widget.ui
