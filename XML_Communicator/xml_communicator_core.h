@@ -11,10 +11,11 @@
 #include <QTextCodec>               // For UTF-8 formating
 //---$---
 #include "xml_communicator_docmgr.h"
+#include "xml_communicator_functions.h"
 //---#---
 #include <QDebug>   // DEBUGGING ONLY
 
-class XML_Communicator_Core : public QObject, public XML_Communicator_DocMGR
+class XML_Communicator_Core : public QObject, public XML_Communicator_DocMGR, public XML_Communicator_Functions
 {
     Q_OBJECT
 public:

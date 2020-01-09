@@ -19,11 +19,13 @@ SOURCES += \
     main.cpp \
     xml_communicator_core.cpp \
     xml_communicator_docmgr.cpp \
+    xml_communicator_functions.cpp \
     xml_communicator_widget.cpp
 
 HEADERS += \
     xml_communicator_core.h \
     xml_communicator_docmgr.h \
+    xml_communicator_functions.h \
     xml_communicator_widget.h
 
 FORMS += \
