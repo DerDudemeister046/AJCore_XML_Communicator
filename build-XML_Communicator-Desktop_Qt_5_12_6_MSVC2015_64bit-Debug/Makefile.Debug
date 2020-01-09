@@ -1940,7 +1940,6 @@ debug\xml_documentmanagement.obj: ..\XML_Communicator\xml_documentmanagement.cpp
 		D:\Qt\5.12.6\msvc2015_64\include\QtXml\qdom.h \
 		D:\Qt\5.12.6\msvc2015_64\include\QtXml\qtxmlglobal.h \
 		D:\Qt\5.12.6\msvc2015_64\include\QtXml\qtxml-config.h \
-		D:\Qt\5.12.6\msvc2015_64\include\QtCore\QXmlStreamReader \
 		D:\Qt\5.12.6\msvc2015_64\include\QtCore\QDebug
 
 debug\moc_xml_communicator_core.obj: debug\moc_xml_communicator_core.cpp 

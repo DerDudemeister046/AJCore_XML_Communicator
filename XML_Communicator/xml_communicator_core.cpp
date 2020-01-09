@@ -150,7 +150,7 @@ void XML_Communicator_Core::processFile(QString tag, QString attribute)
 {
     //docmgr.processDocument(&tempfile);
     tempfile.open();
-    initializeDocument(&tempfile,"hallo");
+    initializeDocument(&tempfile);
     getFromDocument(tag,attribute);
     tempfile.close();
 }

@@ -1939,7 +1939,6 @@ release\xml_documentmanagement.obj: ..\XML_Communicator\xml_documentmanagement.c
 		D:\Qt\5.12.6\msvc2015_64\include\QtXml\qdom.h \
 		D:\Qt\5.12.6\msvc2015_64\include\QtXml\qtxmlglobal.h \
 		D:\Qt\5.12.6\msvc2015_64\include\QtXml\qtxml-config.h \
-		D:\Qt\5.12.6\msvc2015_64\include\QtCore\QXmlStreamReader \
 		D:\Qt\5.12.6\msvc2015_64\include\QtCore\QDebug
 
 release\moc_xml_communicator_core.obj: release\moc_xml_communicator_core.cpp 

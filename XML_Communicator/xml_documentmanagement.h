@@ -9,7 +9,6 @@
 #include <QtCore>
 #include <QTemporaryFile>       // To handle file passed by XML_Communicator_Core
 #include <QDomDocument>         // XML-File to be processed
-#include <QXmlStreamReader>     // to read information from streamed xml file
 
 #include <QDebug>
 
@@ -20,7 +19,7 @@ public:
 
     // SET- & GET-Methods
     // Class Functions
-    bool initializeDocument(QTemporaryFile *temp, QString documentName);    // initializes XML-File and root node -> needs to be called to make class work
+    bool initializeDocument(QTemporaryFile *temp);    // initializes XML-File and root node -> needs to be called to make class work
     void processXMLDocument();  // starts the process of interpreting XML-File
     QString getFromDocument(QString tag, QString attribute); // returns value from XML-File as QString
     // Helper Functions
