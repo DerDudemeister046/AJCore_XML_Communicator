@@ -10,13 +10,11 @@
 #include <QFileDialog>              // dialog for load and save files
 #include <QTextCodec>               // For UTF-8 formating
 //---$---
-#include "xml_document_manager.h"   // manage documents in xml format
-
-#include "xml_documentmanagement.h"
+#include "xml_communicator_docmgr.h"
 //---#---
 #include <QDebug>   // DEBUGGING ONLY
 
-class XML_Communicator_Core : public QObject, public XML_DocumentManagement
+class XML_Communicator_Core : public QObject, public XML_Communicator_DocMGR
 {
     Q_OBJECT
 public:
@@ -31,7 +29,7 @@ public:
     void setFileName(QString fileName);             // sets filename that is going to be written
     // Class functions
     void downloadXML(QString xmlurl);               // downloads xml file into tempfile from given destination
-    void readXML();                                 // reads content of tempfile
+    void readFile();                                 // reads content of tempfile
     void flushFile();                               // empties the tempfile
     // File save and load
     void saveToDisk(bool dialog);                   // saves tempfile to disk
@@ -39,7 +37,6 @@ public:
     //
     void processFile(QString tag, QString attribute);
 private:
-    XML_Document_Manager docmgr;
     QTemporaryFile tempfile;                        // temporary file content storage when downloaded from server / uploaded by user
     QFile file;
     QString source;                                 // source of the xml file

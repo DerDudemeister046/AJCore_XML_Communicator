@@ -1,11 +1,11 @@
-#include "xml_documentmanagement.h"
+#include "xml_communicator_docmgr.h"
 
-XML_DocumentManagement::XML_DocumentManagement()
+XML_Communicator_DocMGR::XML_Communicator_DocMGR()
 {
     document = new QDomDocument;
 }
 
-bool XML_DocumentManagement::initializeDocument(QTemporaryFile *temp)
+bool XML_Communicator_DocMGR::initializeDocument(QTemporaryFile *temp)
 {
     bool success = false; // gets true if document got loaded propperly
 
@@ -24,14 +24,14 @@ bool XML_DocumentManagement::initializeDocument(QTemporaryFile *temp)
     return success;
 }
 
-void XML_DocumentManagement::processXMLDocument()
+void XML_Communicator_DocMGR::processXMLDocument()
 {
     qDebug() << "\nXDM:->\tStart processing document";
 
     qDebug() << "XDM:->\tProcessing finished\n";
 }
 
-QString XML_DocumentManagement::getFromDocument(QString tag, QString attribute)
+QString XML_Communicator_DocMGR::getFromDocument(QString tag, QString attribute)
 {
     qDebug() << "XDM:->\tGetting from document:\n\tAttribute:\t" << attribute
              << "\n\tTAG:\t\t" << tag;
@@ -51,12 +51,12 @@ QString XML_DocumentManagement::getFromDocument(QString tag, QString attribute)
     return result;
 }
 
-void XML_DocumentManagement::startTest()
+void XML_Communicator_DocMGR::startTest()
 {
 
 }
 
-bool XML_DocumentManagement::subchildTest(QDomNode *node)
+bool XML_Communicator_DocMGR::subchildTest(QDomNode *node)
 {
     bool finish = false;
 

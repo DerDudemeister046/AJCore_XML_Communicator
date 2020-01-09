@@ -23,7 +23,7 @@ void XML_Communicator_Widget::on_startDownload_btn_clicked()
 
 void XML_Communicator_Widget::on_readXML_btn_clicked()
 {
-    core->readXML();
+    core->readFile();
 }
 
 void XML_Communicator_Widget::on_flushFile_btn_clicked()
@@ -46,7 +46,7 @@ void XML_Communicator_Widget::on_silent_test_btn_clicked()
     core->setFileName("dummy.txt");
     core->saveToDisk(false);
     core->loadFromDisk(false);
-    core->readXML();
+    core->readFile();
 }
 
 void XML_Communicator_Widget::on_evaluate_btn_clicked()

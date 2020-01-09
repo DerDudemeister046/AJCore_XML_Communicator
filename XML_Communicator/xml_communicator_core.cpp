@@ -55,7 +55,7 @@ void XML_Communicator_Core::downloadXML(QString xmlurl)
     manager->get(QNetworkRequest(QUrl(getSource())));
 }
 
-void XML_Communicator_Core::readXML()
+void XML_Communicator_Core::readFile()
 {
     tempfile.open();
     qDebug() << "XCC:->\t Reading content of tempfile...";

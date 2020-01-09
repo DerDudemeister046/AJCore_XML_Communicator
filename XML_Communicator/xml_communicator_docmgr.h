@@ -12,10 +12,10 @@
 
 #include <QDebug>
 
-class XML_DocumentManagement
+class XML_Communicator_DocMGR
 {
 public:
-    XML_DocumentManagement();
+    XML_Communicator_DocMGR();
 
     // SET- & GET-Methods
     // Class Functions
